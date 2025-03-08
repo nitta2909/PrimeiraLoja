@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MauricioNitta Dev. </title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Apenas um overlay para o sidebar -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Preloader com animação futurística -->
+    <div class="preloader">
+      <div class="preloader-background"></div>
+      <div class="preloader-grid"></div>
+      <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+      
+      <div class="loader-content">
+        <div class="loader-logo">
+          <div class="name-wrapper">
+            <span class="name-text">M</span>
+            <span class="name-text">a</span>
+            <span class="name-text">u</span>
+            <span class="name-text">r</span>
+            <span class="name-text">i</span>
+            <span class="name-text">c</span>
+            <span class="name-text">i</span>
+            <span class="name-text">o</span>
+            <span class="name-text">&nbsp;</span>
+            <span class="name-text">N</span>
+            <span class="name-text">i</span>
+            <span class="name-text">t</span>
+            <span class="name-text">t</span>
+            <span class="name-text">a</span>
+          </div>
+          <div class="dev-title">Front-end Dev.</div>
+        </div>
+        
+        <div class="loader-bar">
+          <div class="loader-progress"></div>
+          <div class="loader-text">
+            Carregando<span class="loading-dots">...</span>
+            <span class="progress-percentage">0%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo principal do site -->
+    <div class="content">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h3>Filtros</h3>
+          <!-- Removido o botão toggle daqui -->
+        </div>
+
+        <div class="sidebar-content">
+          <!-- Categorias -->
+          <div class="sidebar-section">
+            <h4>Categorias</h4>
+            <ul class="category-list">
+              <li><a href="#" class="active">Todos os Produtos</a></li>
+              <li><a href="#">Teclados</a></li>
+              <li><a href="#">Mouses</a></li>
+              <li><a href="#">Monitores</a></li>
+              <li><a href="#">Headsets</a></li>
+              <li><a href="#">Acessórios</a></li>
+            </ul>
+          </div>
+
+          <!-- Filtro de preço -->
+          <div class="sidebar-section">
+            <h4>Faixa de Preço</h4>
+            <div class="price-slider">
+              <div class="price-range">
+                <div class="range-slider">
+                  <input
+                    type="range"
+                    min="0"
+                    max="2000"
+                    value="0"
+                    class="range-min"
+                  />
+                  <input
+                    type="range"
+                    min="0"
+                    max="2000"
+                    value="2000"
+                    class="range-max"
+                  />
+                </div>
+                <div class="range-values">
+                  <span class="min-value">R$ 0</span>
+                  <span class="max-value">R$ 2000</span>
+                </div>
+              </div>
+              <button class="neon-button small-button">Aplicar</button>
+            </div>
+          </div>
+
+          <!-- Filtro de marcas -->
+          <div class="sidebar-section">
+            <h4>Marcas</h4>
+            <div class="checkbox-list">
+              <label class="checkbox-container">
+                <input type="checkbox" checked="checked" />
+                <span class="checkmark"></span>
+                Razer
+              </label>
+              <label class="checkbox-container">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                Logitech
+              </label>
+              <label class="checkbox-container">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                Corsair
+              </label>
+              <label class="checkbox-container">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                HyperX
+              </label>
+              <label class="checkbox-container">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                Asus
+              </label>
+            </div>
+          </div>
+
+          <!-- Filtro de avaliações -->
+          <div class="sidebar-section">
+            <h4>Avaliações</h4>
+            <div class="rating-filter">
+              <label class="rating-container">
+                <input type="radio" name="rating" value="5" />
+                <div class="stars">
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                </div>
+                <span class="rating-text">5 estrelas</span>
+              </label>
+              <label class="rating-container">
+                <input type="radio" name="rating" value="4" />
+                <div class="stars">
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star">★</span>
+                </div>
+                <span class="rating-text">4+ estrelas</span>
+              </label>
+              <label class="rating-container">
+                <input type="radio" name="rating" value="3" />
+                <div class="stars">
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <span class="rating-text">3+ estrelas</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Filtro de disponibilidade -->
+          <div class="sidebar-section">
+            <h4>Disponibilidade</h4>
+            <div class="radio-list">
+              <label class="radio-container">
+                <input
+                  type="radio"
+                  name="availability"
+                  value="all"
+                  checked="checked"
+                />
+                <span class="radio-mark"></span>
+                Todos
+              </label>
+              <label class="radio-container">
+                <input type="radio" name="availability" value="instock" />
+                <span class="radio-mark"></span>
+                Em estoque
+              </label>
+              <label class="radio-container">
+                <input type="radio" name="availability" value="preorder" />
+                <span class="radio-mark"></span>
+                Pré-venda
+              </label>
+            </div>
+          </div>
+
+          <!-- Botões de ação -->
+          <div class="sidebar-section action-buttons">
+            <button class="neon-button full-width">Aplicar Filtros</button>
+            <button class="reset-button">Limpar Filtros</button>
+          </div>
+        </div>
+      </div>
+
+      <header>
+        <!-- Botão toggle do sidebar posicionado adequadamente -->
+        <button class="toggle-sidebar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="logo">
+          <h1>MauricioNitta<span class="neon-text">Dev.</span></h1>
+        </div>
+        
+        <div class="delivery-address">
+            <div class="address-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            
+            <div class="address-content">
+              <span class="address-label">Enviar para</span>
+              <span class="address-text">Seu Nome -</span>
+            </div>
+          </div>
+
+        <nav>
+          <ul>
+            <li><a href="#" class="neon-button">Home</a></li>
+            <li><a href="#" class="neon-button">Categorias</a></li>
+            <li><a href="#" class="neon-button">Ofertas</a></li>
+            <li><a href="#" class="neon-button">Conta</a></li>
+            <li>
+              <a href="#" class="neon-button cart"
+                >Carrinho <span class="cart-count">0</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Buscar produtos..."
+          class="search-input"
+        />
+        <button class="search-button">Buscar</button>
+      </div>
+
+      <main>
+        <section class="featured-section">
+            <h2>Produtos em <span class="neon-text">Destaque</span></h2>
+            <div class="products-grid">
+            <!-- Produto 1 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://i.pinimg.com/736x/8a/11/96/8a119625e6e620cd442353743c3c7224.jpg"
+                  alt="Teclado Mecânico"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Teclado Mecânico RGB</h3>
+                <p class="product-description">
+                  Teclado mecânico com switches blue e iluminação RGB
+                  personalizável.
+                </p>
+                <div class="product-price">R$ 299,99</div>
+                <button class="neon-button add-to-cart">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1593305841991-05c297ba4575"
+                  alt="Monitor Gamer"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Monitor Gamer 144Hz</h3>
+                <p class="product-description">
+                  Monitor gamer de 24 polegadas com alta taxa de atualização.
+                </p>
+                <div class="product-price">R$ 1.499,99</div>
+                <button class="neon-button add-to-cart">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7" alt="Mouse Gamer" />
+              </div>
+              <div class="product-info">
+                <h3>Mouse Gamer 16000 DPI</h3>
+                <p class="product-description">
+                  Mouse gamer com sensor óptico de alta precisão e iluminação
+                  RGB.
+                </p>
+                <div class="product-price">R$ 249,99</div>
+                <button class="neon-button add-to-cart">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1599669454699-248893623440"
+                  alt="Headset Gamer"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Headset 7.1 Surround</h3>
+                <p class="product-description">
+                  Headset com som surround 7.1 e microfone com cancelamento de
+                  ruído.
+                </p>
+                <div class="product-price">R$ 349,99</div>
+                <button class="neon-button add-to-cart">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 5 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1599669454699-248893623440?q=80"
+                  alt="Headset Gamer"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Headset 7.1 Surround</h3>
+                <p class="product-description">
+                  Headset com som surround 7.1 e microfone com cancelamento de
+                  ruído.
+                </p>
+                <div class="product-price">R$ 349,99</div>
+                <button class="neon-button add-to-cart">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 6 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://i.pinimg.com/736x/21/a6/9b/21a69bcab42c5248f2a90447950a7070.jpg"
+                  alt="Teclado Mecânico"
+                />
+              </div>
+              <div class="product-info">
+                <h3>Teclado Sem Fio Gaming</h3>
+                <p class="product-description">
+                  Teclado sem fio com iluminação RGB e teclas de função programáveis.
+                </p>
+                <div class="product-price">R$ 349,99</div>
+                <button class="neon-button add-to-cart">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pagination">
+            <button class="neon-button pagination-button active">1</button>
+            <button class="neon-button pagination-button">2</button>
+            <button class="neon-button pagination-button">3</button>
+          </div>
+        </section>
+
+        <!-- Adicione esta seção após a seção de produtos em destaque -->
+        <section class="promo-section">
+          <h2>Produtos em <span class="neon-text">Promoção</span></h2>
+
+          <div class="promo-container">
+            <!-- Produto em Promoção 1 -->
+            <div class="promo-card">
+              <div class="promo-discount">-30%</div>
+              <div class="promo-image">
+                <img
+                  src="https://i.pinimg.com/736x/b3/f4/55/b3f455bb987857d7988fa7e67b6789ce.jpg"
+                  alt="Fone de Ouvido Gamer"
+                />
+              </div>
+              <div class="promo-info">
+                <h3>Fone de Ouvido 7.1</h3>
+                <div class="promo-price">
+                  <span class="original-price">R$ 499,99</span>
+                  <span class="discounted-price">R$ 349,99</span>
+                </div>
+                <div class="time-left">
+                  <span class="clock-icon">⏱️</span>
+                  <span class="countdown">23:45:12</span>
+                </div>
+                <button class="neon-button promo-button add-to-cart">
+                  Aproveitar
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto em Promoção 2 -->
+            <div class="promo-card">
+              <div class="promo-discount">-25%</div>
+              <div class="promo-image">
+                <img
+                  src="https://i.pinimg.com/736x/65/84/17/6584175af17d1067d0259f42611d15aa.jpg"
+                  alt="Mouse Gamer Wireless"
+                />
+              </div>
+              <div class="promo-info">
+                <h3>Mouse Gamer</h3>
+                <div class="promo-price">
+                  <span class="original-price">R$ 299,99</span>
+                  <span class="discounted-price">R$ 224,99</span>
+                </div>
+                <div class="time-left">
+                  <span class="clock-icon">⏱️</span>
+                  <span class="countdown">11:32:47</span>
+                </div>
+                <button class="neon-button promo-button add-to-cart">
+                  Aproveitar
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto em Promoção 3 -->
+            <div class="promo-card">
+              <div class="promo-discount">-40%</div>
+              <div class="promo-image">
+                <img
+                  src="https://i.pinimg.com/736x/40/3f/5c/403f5c497f1de80be8fa93f74d7f187d.jpg"
+                  alt="Teclado Mecânico"
+                />
+              </div>
+              <div class="promo-info">
+                <h3>Teclado Mecânico RGB</h3>
+                <div class="promo-price">
+                  <span class="original-price">R$ 459,99</span>
+                  <span class="discounted-price">R$ 275,99</span>
+                </div>
+                <div class="time-left">
+                  <span class="clock-icon">⏱️</span>
+                  <span class="countdown">07:15:33</span>
+                </div>
+                <button class="neon-button promo-button add-to-cart">
+                  Aproveitar
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+          <div class="products-grid">
+            <!-- Adicione aqui novos produtos em promoção -->
+          </div>
+        </section>
+
+        <section class="categories-section">
+          <h2>Categorias</h2>
+          <div class="categories-grid">
+            <div class="category-card">
+              <img src="https://img.kwcdn.com/product/open/2024-01-18/1705560812206-8614c6e4e629414cbec4005a30fc6295-goods.jpeg?imageView2/2/w/800/q/70/format/webp" alt="Teclados" />
+              <h3>Teclados</h3>
+            </div>
+            <div class="category-card">
+              <img src="https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/f03bbd6536163de93d0273b8ffcf1eb3.jpg?imageView2/2/w/800/q/70/format/webp" alt="Mouses" />
+              <h3>Mouses</h3>
+            </div>
+            <div class="category-card">
+              <img src="https://img.kwcdn.com/product/2029de24ea/a69ef4d1-e2a6-47bf-b517-db19e3be1acf_800x800.png?imageView2/2/w/800/q/70/format/webp" alt="Monitores" />
+              <h3>Monitores</h3>
+            </div>
+            <div class="category-card">
+              <img src="https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/6a824beae5fd3d2764c313c32c82e0ed.jpg?imageView2/2/w/800/q/70/format/webp" alt="Áudio" />
+              <h3>Áudio</h3>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Sobre Nós</h3>
+            <p>
+              TechMarket é seu marketplace de tecnologia com os melhores preços.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Links Úteis</h3>
+            <ul>
+              <li><a href="#">Política de Privacidade</a></li>
+              <li><a href="#">Termos de Uso</a></li>
+              <li><a href="#">Central de Ajuda</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contato</h3>
+            <p>Email: contato@techmarket.com</p>
+            <p>Telefone: (11) 1234-5678</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 TechMarket. Todos os direitos reservados.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Adicionar elemento "Back to Top" se necessário -->
+    <button class="back-to-top">
+      <i class="arrow-up">↑</i>
+    </button>
+
+    <!-- Carregue apenas o script externo, remova o script embutido -->
+    <script src="script.js"></script>
+  </body>
+</html>

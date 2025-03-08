@@ -1,0 +1,2536 @@
+/* Reset e estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --primary-color: #050724;
+  --secondary-color: #00fff9;
+  --accent-color: #bf00ff;
+  --text-color: #ffffff;
+  --dark-bg: #0a0a1a;
+  --card-bg: #101030;
+  --success-color: #0aff0a;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* Preloader Modificado - Animação Futurística */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
+  overflow: hidden;
+}
+
+.preloader-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(20, 20, 60, 0.8) 0%,
+    var(--primary-color) 70%
+  );
+  animation: pulseGradient 4s infinite alternate;
+  z-index: -2;
+}
+
+.preloader-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+        90deg,
+        rgba(0, 255, 249, 0.05) 1px,
+        transparent 1px
+      )
+      0 0 / 40px 40px,
+    linear-gradient(0deg, rgba(0, 255, 249, 0.05) 1px, transparent 1px) 0 0 /
+      40px 40px;
+  z-index: -1;
+  animation: gridMove 20s linear infinite;
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  opacity: 0;
+  box-shadow: 0 0 10px var(--secondary-color);
+  animation: float 3s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+.particle:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation-delay: 0.3s;
+}
+.particle:nth-child(3) {
+  top: 40%;
+  left: 40%;
+  animation-delay: 0.6s;
+}
+.particle:nth-child(4) {
+  top: 70%;
+  left: 30%;
+  animation-delay: 0.9s;
+}
+.particle:nth-child(5) {
+  top: 30%;
+  left: 60%;
+  animation-delay: 1.2s;
+}
+.particle:nth-child(6) {
+  top: 80%;
+  left: 70%;
+  animation-delay: 1.5s;
+}
+.particle:nth-child(7) {
+  top: 50%;
+  left: 50%;
+  animation-delay: 1.8s;
+}
+.particle:nth-child(8) {
+  top: 10%;
+  left: 90%;
+  animation-delay: 2.1s;
+}
+
+.loader-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 80%;
+}
+
+.loader-logo {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.name-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  perspective: 1000px;
+}
+
+.name-text {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
+  margin: 0 2px;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInName 0.5s forwards;
+  font-family: "Electrolize", "Courier New", monospace;
+}
+
+.name-text:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.name-text:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.name-text:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.name-text:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.name-text:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.name-text:nth-child(6) {
+  animation-delay: 0.35s;
+}
+.name-text:nth-child(7) {
+  animation-delay: 0.4s;
+}
+.name-text:nth-child(8) {
+  animation-delay: 0.45s;
+}
+.name-text:nth-child(9) {
+  animation-delay: 0.5s;
+}
+.name-text:nth-child(10) {
+  animation-delay: 0.55s;
+}
+.name-text:nth-child(11) {
+  animation-delay: 0.6s;
+}
+.name-text:nth-child(12) {
+  animation-delay: 0.65s;
+}
+.name-text:nth-child(13) {
+  animation-delay: 0.7s;
+}
+.name-text:nth-child(14) {
+  animation-delay: 0.75s;
+}
+
+.dev-title {
+  font-size: 1.8rem;
+  color: white;
+  display: inline-block;
+  position: relative;
+  padding: 0 10px;
+  overflow: hidden;
+  font-family: "Electrolize", "Courier New", monospace;
+  white-space: nowrap;
+  width: 0;
+  border-right: 3px solid var(--accent-color);
+  animation: typing 3s steps(13) 1.5s forwards, blink 0.8s infinite;
+}
+
+.dev-title::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-color),
+    transparent
+  );
+  animation: line 3s ease forwards 2.5s;
+}
+
+.loader-bar {
+  width: 300px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin: 30px auto 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loader-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  border-radius: 4px;
+  box-shadow: 0 0 10px var(--secondary-color);
+  transition: width 0.2s;
+}
+
+.loader-text {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Electrolize", "Courier New", monospace;
+}
+
+.progress-percentage {
+  margin-left: 15px;
+}
+
+.loading-dots {
+  display: inline-block;
+  animation: loadingDots 1.5s infinite;
+}
+
+@keyframes pulseGradient {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(40px);
+  }
+}
+
+@keyframes fadeInName {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 250px;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--accent-color);
+  }
+}
+
+@keyframes line {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-20px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes loadingDots {
+  0%,
+  20% {
+    content: ".";
+  }
+  40% {
+    content: "..";
+  }
+  60%,
+  100% {
+    content: "...";
+  }
+}
+
+/* Conteúdo principal */
+.content {
+  opacity: 0;
+  transition: opacity 1s ease, margin-left 0.3s ease;
+}
+
+.content.visible {
+  opacity: 1;
+}
+
+/* Header */
+header {
+  background-color: rgba(5, 7, 36, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 255, 249, 0.3);
+}
+
+/* Efeitos CSS para o logo */
+
+/* Primeiro, vamos modificar o elemento que contém o logo */
+.logo {
+  position: relative;
+  overflow: visible;
+  padding: 5px 15px;
+  transition: all 0.3s ease;
+}
+
+/* Efeito de texto cibernético com brilho e destaque para o texto principal */
+.logo h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  animation: textPulse 2s infinite alternate;
+}
+
+/* Efeito neon avançado para a parte "Market" */
+.logo .neon-text {
+  color: var(--secondary-color);
+  text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color),
+    0 0 20px var(--secondary-color), 0 0 40px var(--secondary-color);
+  position: relative;
+  display: inline-block;
+  animation: neonFlicker 5s infinite alternate;
+}
+
+/* Adiciona um destaque de linha sob o logo */
+.logo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--secondary-color),
+    var(--accent-color),
+    var(--secondary-color),
+    transparent
+  );
+  animation: lineSlide 3s infinite;
+}
+
+/* Efeito de brilho ao redor do logo quando hover */
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo:hover::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 10px;
+  background: linear-gradient(
+    45deg,
+    var(--secondary-color),
+    transparent,
+    var(--accent-color),
+    transparent,
+    var(--secondary-color)
+  );
+  filter: blur(10px);
+  opacity: 0.7;
+  z-index: -1;
+  animation: borderGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Adiciona um efeito de circuito digital no fundo */
+.logo:hover::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-color),
+    var(--secondary-color),
+    var(--accent-color),
+    transparent
+  );
+  height: 3px;
+  animation: lineSlide 1.5s infinite;
+}
+
+/* Animação de pulso para o texto */
+@keyframes textPulse {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(0, 255, 249, 0.3);
+  }
+}
+
+/* Animação de flickering para o efeito neon (como uma luz de neon real) */
+@keyframes neonFlicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color),
+      0 0 20px var(--secondary-color), 0 0 40px var(--secondary-color);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+/* Animação de linha deslizante */
+@keyframes lineSlide {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+}
+
+/* Animação do brilho da borda */
+@keyframes borderGlow {
+  0% {
+    opacity: 0.5;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 0.8;
+    filter: blur(20px);
+  }
+}
+
+/* Ajuste responsivo para telas menores */
+@media (max-width: 768px) {
+  .logo h1 {
+    font-size: 2rem;
+  }
+
+  .name-text {
+    font-size: 3rem;
+  }
+
+  .dev-title {
+    font-size: 1.5rem;
+  }
+
+  .loader-bar {
+    width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .name-text {
+    font-size: 2rem;
+  }
+
+  .dev-title {
+    font-size: 1.2rem;
+  }
+
+  .loader-bar {
+    width: 200px;
+  }
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: 1px;
+  right: -3px;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 0.8rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.cart-count.pulse {
+  animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Barra de busca */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 70%;
+  padding: 15px;
+  border: 2px solid var(--secondary-color);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 15px var(--secondary-color);
+}
+
+.search-button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: var(--accent-color);
+  color: white;
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--secondary-color);
+  font-size: 2rem;
+  text-shadow: 0 0 10px rgba(0, 255, 249, 0.5);
+}
+
+/* Grade de produtos */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Card de produto */
+.product-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.1);
+}
+
+.product-info {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info h3 {
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.product-description {
+  color: #ccc;
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* Grade de categorias */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(191, 0, 255, 0.3);
+}
+
+.category-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.category-card h3 {
+  color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-bg);
+  color: #ccc;
+  padding: 40px 20px 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h3 {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--secondary-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Elementos Neon */
+.neon-text {
+  color: var(--secondary-color);
+  text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color),
+    0 0 20px var(--secondary-color);
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+@keyframes neonPulse {
+  from {
+    text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color),
+      0 0 20px var(--secondary-color);
+  }
+  to {
+    text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color),
+      0 0 20px var(--secondary-color), 0 0 30px var(--secondary-color);
+  }
+}
+
+.neon-button {
+  background-color: transparent;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 0 5px var(--secondary-color);
+  font-weight: 600;
+}
+
+.neon-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 15px var(--secondary-color), 0 0 30px var(--secondary-color);
+}
+
+.neon-button.small-button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+.neon-button.full-width {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Efeito Ripple para botões */
+.ripple {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: -320px; /* Começa fora da tela */
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #121212;
+  z-index: 1000;
+  overflow-y: auto;
+  transition: left 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 255, 249, 0.3);
+  padding: 20px;
+}
+
+.sidebar.active {
+  left: 0; /* Move para dentro da tela quando ativo */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h3 {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+
+.sidebar-section {
+  margin-bottom: 25px;
+}
+
+.sidebar-section h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.category-list {
+  list-style: none;
+}
+
+.category-list li {
+  margin-bottom: 10px;
+}
+
+.category-list a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 5px 0;
+}
+
+.category-list a:hover,
+.category-list a.active {
+  color: var(--success-color);
+}
+
+/* Filtro de preço */
+.price-range {
+  margin-bottom: 15px;
+}
+
+.range-slider {
+  position: relative;
+  height: 5px;
+  background-color: #333;
+  border-radius: 5px;
+  margin: 0 10px 20px;
+}
+
+.range-slider input {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: 0;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+}
+
+.range-slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 0 10px var(--secondary-color);
+}
+
+.range-values {
+  display: flex;
+  justify-content: space-between;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Checkboxes e Radio buttons */
+.checkbox-container,
+.radio-container,
+.rating-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #ccc;
+}
+
+.checkbox-container input,
+.radio-container input,
+.rating-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark,
+.radio-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+.radio-mark {
+  border-radius: 50%;
+}
+
+.checkbox-container:hover input ~ .checkmark,
+.radio-container:hover input ~ .radio-mark {
+  background-color: #444;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--success-color);
+}
+
+.radio-container input:checked ~ .radio-mark {
+  border: 2px solid var(--success-color);
+}
+
+.checkmark:after,
+.radio-mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--primary-color);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.radio-container input:checked ~ .radio-mark:after {
+  display: block;
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success-color);
+}
+
+/* Avaliações com estrelas */
+.rating-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.stars {
+  display: flex;
+  margin-right: 10px;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.star.active {
+  color: #ffd700;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+}
+
+.rating-text {
+  font-size: 0.9rem;
+}
+
+/* Botões de ação */
+.action-buttons {
+  margin-top: 30px;
+}
+
+.reset-button {
+  background-color: transparent;
+  color: #ccc;
+  border: none;
+  text-align: center;
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.reset-button:hover {
+  color: var(--secondary-color);
+}
+
+/* Overlay para o sidebar */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: none;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+/* Responsivo para o Sidebar */
+.toggle-sidebar {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  z-index: 1001;
+  position: relative;
+}
+
+.toggle-sidebar span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 255, 249, 0.7);
+}
+
+.toggle-sidebar.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.toggle-sidebar.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-sidebar.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Ajuste de margem para o conteúdo quando o sidebar está aberto */
+.content.sidebar-active {
+  margin-left: 300px;
+}
+
+/* Botão voltar ao topo */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px var(--secondary-color);
+  z-index: 99;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Animações de entrada */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-down {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Menu Mobile */
+.mobile-menu-toggle {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  z-index: 101;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 255, 249, 0.7);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  header {
+    padding: 15px;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    gap: 5px;
+  }
+
+  nav a {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .content.sidebar-active {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .search-input {
+    width: 60%;
+  }
+
+  .search-button {
+    padding: 10px 15px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .sidebar {
+    width: 280px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+
+  .search-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sidebar {
+    width: 90%;
+    left: -100%;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.pagination-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-button.active {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Adicione este código ao seu arquivo styles.css */
+
+/* Animações para produtos na paginação */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowIn {
+  0% {
+    opacity: 0;
+    filter: brightness(0.5);
+    transform: translateY(20px);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+    transform: translateY(0);
+  }
+}
+
+/* Classe que será adicionada pelo JavaScript */
+.product-card.animate-in {
+  animation: glowIn 0.5s ease-out forwards;
+}
+
+/* Adicionar atraso para cada produto criar efeito cascata */
+.product-card.animate-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.product-card.animate-in:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.product-card.animate-in:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Garantir que os produtos não são visíveis antes da animação */
+.product-card {
+  opacity: 0;
+}
+
+.product-card.visible {
+  opacity: 1;
+}
+
+/* Adicione este código ao seu arquivo styles.css */
+
+/* Animações para produtos na paginação */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowIn {
+  0% {
+    opacity: 0;
+    filter: brightness(0.5);
+    transform: translateY(20px);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+    transform: translateY(0);
+  }
+}
+
+/* Classe para os produtos na animação */
+.product-card.animate-in {
+  animation: glowIn 0.6s ease-out forwards;
+}
+
+/* Atraso para cada produto criar efeito cascata */
+.products-grid .product-card:nth-child(1).animate-in {
+  animation-delay: 0.1s;
+}
+
+.products-grid .product-card:nth-child(2).animate-in {
+  animation-delay: 0.2s;
+}
+
+.products-grid .product-card:nth-child(3).animate-in {
+  animation-delay: 0.3s;
+}
+
+/* Garantir que os produtos não são visíveis antes da animação */
+.product-card {
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.product-card.visible {
+  opacity: 1;
+}
+
+/* Melhoria nos botões de paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.pagination-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.pagination-button.active {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 15px var(--secondary-color);
+}
+
+.pagination-nav {
+  padding: 8px 15px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.prev-page,
+.next-page {
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+
+.prev-page:hover,
+.next-page:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Efeito hover especial para os botões de paginação */
+.pagination-button:not(.active):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 255, 249, 0.4);
+}
+
+/* Efeito quando o botão de paginação é clicado */
+.pagination-button:active {
+  transform: translateY(1px);
+}
+
+/* Adicione este código ao seu arquivo styles.css */
+
+/* Centralizar produtos na grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  justify-items: center; /* Centraliza os itens dentro da grid */
+  align-items: stretch;
+  width: 100%;
+  max-width: 1200px; /* Opcional: define um tamanho máximo para a grid */
+  margin: 0 auto; /* Centraliza a grid inteira na página */
+  padding: 0 20px; /* Adiciona um pouco de padding nas laterais */
+}
+
+/* Ajustes para os cards de produtos */
+.product-card {
+  width: 100%; /* Garante que cada card ocupe a largura total da célula */
+  max-width: 350px; /* Limita a largura máxima de cada card */
+  margin: 0 auto; /* Centraliza o card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ajustes para o conteúdo do produto */
+.product-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Media queries para garantir centralização em diferentes tamanhos de tela */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    max-width: 100%;
+  }
+}
+
+/* Adicione este código ao seu styles.css */
+
+/* Estilos para o carrossel */
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.carousel-button {
+  background-color: rgba(5, 7, 36, 0.7);
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 255, 249, 0.3);
+  transition: all 0.3s ease;
+  margin: 0 10px;
+}
+
+.carousel-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 20px var(--secondary-color);
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* Animação para os slides */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.carousel-track .product-card {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 1;
+}
+
+/* Atraso escalonado para cada produto no carrossel */
+.carousel-track .product-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.carousel-track .product-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.carousel-track .product-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+/* Adicione este código ao seu arquivo styles.css */
+
+/* Centralizar seção de categorias */
+.categories-section {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.category-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  text-align: center;
+  padding: 25px 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(191, 0, 255, 0.3);
+}
+
+.category-card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--secondary-color);
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--secondary-color);
+}
+
+.category-card h3 {
+  color: var(--secondary-color);
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Adicionar efeito de brilho ao passar o mouse */
+.category-card:hover h3 {
+  text-shadow: 0 0 8px var(--secondary-color);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+
+  .category-card img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .category-card {
+    padding: 15px 10px;
+  }
+
+  .category-card img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Adicione este código ao seu arquivo styles.css */
+
+/* Estilos para a seção de promoções */
+.promo-section {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(
+    180deg,
+    var(--primary-color) 0%,
+    rgba(10, 10, 40, 0.9) 100%
+  );
+  border-radius: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--secondary-color),
+    transparent
+  );
+  animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.promo-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: white;
+  position: relative;
+  display: inline-block;
+}
+
+.promo-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 3px;
+  box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+}
+
+.promo-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.promo-card {
+  width: 100%;
+  max-width: 300px;
+  background-color: rgba(20, 20, 50, 0.8);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border: 1px solid rgba(191, 0, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.promo-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(191, 0, 255, 0.4);
+  border-color: var(--accent-color);
+}
+
+.promo-discount {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 20px;
+  z-index: 10;
+  box-shadow: 0 0 15px var(--accent-color);
+  transform: rotate(5deg);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: rotate(5deg) scale(1);
+    box-shadow: 0 0 10px var(--accent-color);
+  }
+  50% {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 0 20px var(--accent-color);
+  }
+  100% {
+    transform: rotate(5deg) scale(1);
+    box-shadow: 0 0 10px var(--accent-color);
+  }
+}
+
+.promo-image {
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 7, 36, 0.8) 0%,
+    rgba(10, 10, 40, 0.8) 100%
+  );
+  position: relative;
+}
+
+.promo-image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to top, rgba(20, 20, 50, 1), transparent);
+}
+
+.promo-image img {
+  width: 90%;
+  height: auto;
+  transition: transform 0.5s ease;
+  filter: drop-shadow(0 10px 15px rgba(0, 255, 249, 0.3));
+}
+
+.promo-card:hover .promo-image img {
+  transform: scale(1.15) rotate(2deg);
+}
+
+.promo-info {
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.promo-info h3 {
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.promo-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.original-price {
+  color: #888;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+.discounted-price {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 5px var(--secondary-color);
+}
+
+.time-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  color: #ddd;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 8px 12px;
+  border-radius: 20px;
+  width: fit-content;
+  margin: 0 auto 20px;
+}
+
+.clock-icon {
+  font-size: 1.2rem;
+}
+
+.countdown {
+  font-family: monospace;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.promo-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(191, 0, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.promo-button:hover {
+  background-color: var(--accent-color);
+  color: white;
+  box-shadow: 0 0 20px var(--accent-color);
+}
+
+.promo-button:hover::before {
+  left: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .promo-container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .promo-section {
+    padding: 40px 15px;
+  }
+
+  .promo-card {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 0.48px) {
+  .promo-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .promo-container {
+    gap: 15px;
+  }
+
+  .promo-card {
+    max-width: 100%;
+  }
+}
+
+/* Adicione estes estilos para o modal de seleção de endereço */
+
+/* Overlay do modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+/* Conteúdo do modal */
+.address-modal {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 25px rgba(0, 255, 249, 0.3);
+  border: 1px solid rgba(0, 255, 249, 0.2);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cabeçalho do modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h3 {
+  color: var(--secondary-color);
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: var(--secondary-color);
+}
+
+/* Corpo do modal */
+.modal-body {
+  padding: 20px;
+}
+
+.address-list {
+  margin-bottom: 20px;
+}
+
+.address-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.address-item:hover {
+  background-color: rgba(0, 255, 249, 0.1);
+}
+
+.address-item.saved {
+  border: 1px solid rgba(0, 255, 249, 0.3);
+  background-color: rgba(0, 255, 249, 0.05);
+}
+
+.address-item input[type="radio"] {
+  margin-top: 5px;
+  margin-right: 15px;
+  accent-color: var(--secondary-color);
+}
+
+.address-item label {
+  flex: 1;
+  color: #eee;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.default-badge {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.add-address-btn {
+  background: none;
+  border: none;
+  border-radius: 5px;
+  color: var(--secondary-color);
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.add-address-btn:hover {
+  background-color: rgba(0, 255, 249, 0.1);
+  text-decoration: underline;
+}
+
+/* Rodapé do modal */
+.modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-address {
+  padding: 10px 20px;
+}
+
+/* Efeitos CSS para o logo sempre ativos */
+/* Efeitos CSS para o logo sempre ativos */
+
+/* Estilo base do logo */
+.logo {
+  position: relative;
+  overflow: visible;
+  padding: 5px 15px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+/* Efeito de texto cibernético com brilho permanente */
+.logo h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  animation: textPulse 2s infinite alternate;
+  font-family: "Electrolize", sans-serif;
+}
+
+/* Efeito neon avançado para a parte "Market" - sempre ativo */
+.logo .neon-text {
+  color: var(--secondary-color);
+  text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color),
+    0 0 20px var(--secondary-color), 0 0 40px var(--secondary-color);
+  position: relative;
+  display: inline-block;
+  animation: neonFlicker 5s infinite alternate;
+}
+
+/* Efeito de glitch digital - sempre ativo */
+.logo h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 249, 0.2) 20%,
+    transparent 20.1%,
+    transparent 40%,
+    rgba(191, 0, 255, 0.2) 40.1%,
+    transparent 40.2%
+  );
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 2;
+  background-size: 300% 100%;
+  animation: glitchEffect 3s linear infinite;
+}
+
+/* Efeito de brilho ao redor do logo - sempre ativo */
+.logo::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 10px;
+  background: linear-gradient(
+    45deg,
+    var(--secondary-color),
+    transparent,
+    var(--accent-color),
+    transparent,
+    var(--secondary-color)
+  );
+  filter: blur(10px);
+  opacity: 0.7;
+  z-index: -1;
+  animation: borderGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Linha deslizante sob o logo - sempre visível */
+.logo::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--secondary-color),
+    var(--accent-color),
+    var(--secondary-color),
+    transparent
+  );
+  animation: lineSlide 3s infinite;
+  z-index: 1;
+}
+
+/* Efeito de escaneamento com linhas horizontais - sempre ativo */
+.logo-scan {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 249, 0.05) 2px,
+    rgba(0, 255, 249, 0.05) 4px
+  );
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: -1;
+  animation: scanLine 3s linear infinite;
+}
+
+/* Efeito de partículas brilhantes - sempre ativo */
+.logo-particles {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(0, 255, 249, 0.7) 0%,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 40% 70%,
+      rgba(191, 0, 255, 0.5) 0%,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 60% 20%,
+      rgba(0, 255, 249, 0.6) 0%,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(191, 0, 255, 0.7) 0%,
+      transparent 3px
+    );
+  background-size: 150% 150%;
+  filter: blur(1px);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: -1;
+  animation: floatingParticles 4s ease infinite;
+}
+
+/* Animação de pulso para o texto */
+@keyframes textPulse {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(0, 255, 249, 0.3);
+  }
+}
+
+/* Animação de flickering para o efeito neon (como uma luz de neon real) */
+@keyframes neonFlicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color),
+      0 0 20px var(--secondary-color), 0 0 40px var(--secondary-color);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+/* Animação de linha deslizante */
+@keyframes lineSlide {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+}
+
+/* Animação do brilho da borda */
+@keyframes borderGlow {
+  0% {
+    opacity: 0.5;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 0.8;
+    filter: blur(20px);
+  }
+}
+
+/* Efeito de glitch digital */
+@keyframes glitchEffect {
+  0% {
+    background-position: 0% 0;
+    transform: translateX(0);
+  }
+  7% {
+    background-position: 30% 0;
+  }
+  14% {
+    transform: translateX(-5px);
+  }
+  20% {
+    background-position: 60% 0;
+  }
+  40% {
+    transform: translateX(3px);
+  }
+  60% {
+    background-position: 100% 0;
+  }
+  80% {
+    transform: translateX(-3px);
+  }
+  100% {
+    background-position: 0% 0;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100px;
+  }
+}
+
+@keyframes floatingParticles {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 50% 25%;
+  }
+  50% {
+    background-position: 25% 50%;
+  }
+  75% {
+    background-position: 75% 75%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Efeito de texto cibernético com brilho permanente */
